@@ -1,16 +1,18 @@
-﻿namespace SelectionStatementExercise
+﻿﻿namespace SelectionStatementExercise
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            int favNum = 9;
-
-            Console.WriteLine("Can You Guess My Favorate Number?");
-            int userGuess = int.Parse(Console.ReadLine());
+            var random = new Random();
+            var favNum = random.Next(1, 101);
+            int userGuess = 0;
 
             while (userGuess != favNum)
             {
+                Console.WriteLine("Can You My Number? Hint, It's Between 1 and 100?");
+                userGuess = int.Parse(Console.ReadLine());
+
                 if (userGuess < favNum)
                 {
                     Console.WriteLine("To Low!");
@@ -22,6 +24,7 @@
                 else
                 {
                     Console.WriteLine("Got It!");
+                    break;
                 }
             }
         }
